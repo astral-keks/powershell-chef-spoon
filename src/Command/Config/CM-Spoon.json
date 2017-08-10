@@ -1,0 +1,47 @@
+{
+  "KnifeExe": "c:\\opscode\\chefdk\\bin\\knife.bat",
+  "KnifeConfig": "Config\\knife.bat",
+  "Commands": [
+    "Bootstrap",
+    "Client",
+    "Configure",
+    "Cookbook",
+    "Cookbook-Site",
+    "Data-Bag",
+    "Delete",
+    "Deps",
+    "Diff",
+    "Download",
+    "Edit",
+    "Environment",
+    "Exec",
+    "Index-Rebuild",
+    "List",
+    "Node",
+    "Recipe-List",
+    "Role",
+    "Search",
+    "Show",
+    "Ssh",
+    "Status",
+    "Tag",
+    "Upload",
+    "User",
+    "XArgs"
+  ],
+  "Verbs": [
+    "Delete",
+    "Deps",
+    "Diff",
+    "Download",
+    "Edit",
+    "List",
+    "Show",
+    "Upload",
+    "XArgs"
+  ],
+  "Arguments": {
+    "Node.Edit": [ "-a" ],
+    "Node.Show": [ "-l" ]
+  }
+}

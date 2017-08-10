@@ -1,0 +1,25 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <AssemblyName>AstralKeks.ChefSpoon.Core</AssemblyName>
+    <RootNamespace>AstralKeks.ChefSpoon.Core</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Windows\CM-Knife.rb" />
+    <EmbeddedResource Include="Resources\Windows\CM-Spoon.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
+    <PackageReference Include="System.ValueTuple" Version="4.4.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AstralKeks.Workbench.Common">
+      <HintPath>..\..\package\AstralKeks.Workbench.Common\0.0.0\lib\net462\AstralKeks.Workbench.Common.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,34 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net462</TargetFramework>
+    <AssemblyName>AstralKeks.ChefSpoon.Command</AssemblyName>
+    <RootNamespace>AstralKeks.ChefSpoon.Command</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Core\ChefSpoon.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ContentWithTargetPath Include="Loader.psm1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>AstralKeks.ChefSpoon.psm1</TargetPath>
+    </ContentWithTargetPath>
+    <ContentWithTargetPath Include="Manifest.psd1">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <TargetPath>AstralKeks.ChefSpoon.psd1</TargetPath>
+    </ContentWithTargetPath>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Management.Automation.dll" Version="10.0.10586" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="AstralKeks.Workbench.PowerShell">
+      <HintPath>..\..\package\AstralKeks.Workbench.PowerShell\0.0.0\lib\net462\AstralKeks.Workbench.PowerShell.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>
