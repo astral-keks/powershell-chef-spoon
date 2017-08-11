@@ -7,7 +7,7 @@ secure_dir              = File.join(worplace_dir, 'Secure')
 
 # Most likely these values will not be changed
 chef_server_url           chef_server
-cookbook_path             [""#{workplace_dir}/Source/trunk/Configuration/chef/cookbooks""]
+cookbook_path             [""#{workplace_dir}/Source/Chef/Cookbooks""]
 
 node_name user_node
 client_key                ""#{secure_dir}/#{user_node}.pem""
