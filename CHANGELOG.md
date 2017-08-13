@@ -1,3 +1,7 @@
+## 0.0.3
+### Fixed
+- Error when switching target
+
 ## 0.0.2
 ### Added
 - Multiple Chef servers support

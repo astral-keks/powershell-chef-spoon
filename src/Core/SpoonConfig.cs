@@ -40,8 +40,9 @@ namespace AstralKeks.ChefSpoon.Core
             {
                 var directory = FsPath.Absolute(Location.Workspace(), Directories.Config);
                 return Directory.EnumerateFiles(directory)
-                  .Where(f => f.StartsWith(Files.Knife, StringComparison.OrdinalIgnoreCase))
-                  .Select(f => Path.GetFileNameWithoutExtension(f).Replace(Files.Knife, string.Empty));
+                    .Select(f => Path.GetFileName(f))
+                    .Where(f => f.StartsWith(Files.Knife, StringComparison.OrdinalIgnoreCase))
+                    .Select(f => Path.GetFileNameWithoutExtension(f).Replace(Files.Knife, string.Empty));
             }
         }
 
@@ -85,7 +86,7 @@ namespace AstralKeks.ChefSpoon.Core
 
             var resourceManager = new ResourceManager(typeof(Spoon));
             var secondaryResourceName = GetResourceName(secondaryName);
-            var primaryResource = GetResource(resourceManager, secondaryResourceName);
+            var primaryResource = GetResource(resourceManager, GetResourceName());
             var primaryConfig = primaryResource.Read<SpoonConfig>();
             primaryConfig.KnifeConfig = secondaryResourceName;
             primaryResource.Write(primaryConfig);
