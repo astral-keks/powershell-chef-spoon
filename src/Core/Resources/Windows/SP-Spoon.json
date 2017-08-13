@@ -30,11 +30,14 @@
     "XArgs"
   ],
   "Verbs": [
+    "Create",
+    "Compare",
     "Delete",
     "Deps",
     "Diff",
     "Download",
     "Edit",
+    "From File",
     "List",
     "Show",
     "Upload",

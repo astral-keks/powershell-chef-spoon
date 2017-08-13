@@ -22,7 +22,14 @@ namespace AstralKeks.ChefSpoon.Command
         public string[] GetTargetNames(string targetNamePart)
         {
             return SpoonConfig.Secondary
-                .Where(s => s.IndexOf(targetNamePart, StringComparison.OrdinalIgnoreCase) >= 0)
+                .Select(t => new
+                {
+                    Target = t,
+                    Index = t.IndexOf(targetNamePart, StringComparison.OrdinalIgnoreCase)
+                })
+                .Where(t => t.Index >= 0)
+                .OrderBy(t => t.Index)
+                .Select(t => t.Target)
                 .ToArray();
         }
     }

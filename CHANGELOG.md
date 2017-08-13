@@ -1,3 +1,7 @@
+## 0.0.4
+### Fixed
+- Invalid target configuration
+
 ## 0.0.3
 ### Fixed
 - Error when switching target

@@ -31,14 +31,28 @@ namespace AstralKeks.ChefSpoon.Command
         public string[] GetCommands(string commandPart)
         {
             return SpoonConfig.Primary.Commands
-                .Where(c => c.IndexOf(commandPart, StringComparison.OrdinalIgnoreCase) >= 0)
+                .Select(c => new
+                {
+                    Command = c,
+                    Index = c.IndexOf(commandPart, StringComparison.OrdinalIgnoreCase)
+                })
+                .Where(t => t.Index >= 0)
+                .OrderBy(t => t.Index)
+                .Select(t => t.Command)
                 .ToArray();
         }
 
         public string[] GetVerbs(string verbPart)
         {
             return SpoonConfig.Primary.Verbs
-                .Where(c => c.IndexOf(verbPart, StringComparison.OrdinalIgnoreCase) >= 0)
+                .Select(v => new
+                {
+                    Verb = v,
+                    Index = v.IndexOf(verbPart, StringComparison.OrdinalIgnoreCase)
+                })
+                .Where(t => t.Index >= 0)
+                .OrderBy(t => t.Index)
+                .Select(t => t.Verb)
                 .ToArray();
         }
     }

@@ -65,9 +65,9 @@ namespace AstralKeks.ChefSpoon.Core
             var secondaryResource = GetResource(resourceManager, secondaryResourceName);
 
             var secondaryConfig = secondaryResource.Read<string>();
-            secondaryConfig = secondaryConfig.Replace(Patterns.ChefServer, Patterns.ChefServer + chefServerUrl);
-            secondaryConfig = secondaryConfig.Replace(Patterns.UserNode, Patterns.UserNode + chefUserNodeName);
-            secondaryConfig = secondaryConfig.Replace(Patterns.ValidationNode, Patterns.ValidationNode + chefValidationNodeName);
+            secondaryConfig = secondaryConfig.Replace(Patterns.ChefServer, $"\"{Patterns.ChefServer}{chefServerUrl}\"");
+            secondaryConfig = secondaryConfig.Replace(Patterns.UserNode, $"\"{Patterns.UserNode}{chefUserNodeName}\"");
+            secondaryConfig = secondaryConfig.Replace(Patterns.ValidationNode, $"\"{Patterns.ValidationNode}{chefValidationNodeName}\"");
             secondaryResource.Write(secondaryConfig);
 
             var primaryResource = GetResource(resourceManager, GetResourceName());
