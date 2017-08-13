@@ -1,6 +1,6 @@
 ﻿{
   "KnifeExe": "c:\\opscode\\chefdk\\bin\\knife.bat",
-  "KnifeConfig": "Config\\knife.bat",
+  "KnifeConfig": "",
   "Commands": [
     "Bootstrap",
     "Client",

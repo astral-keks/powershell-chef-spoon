@@ -7,8 +7,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Resources\Windows\CM-Knife.rb" />
-    <EmbeddedResource Include="Resources\Windows\CM-Spoon.json" />
+    <EmbeddedResource Include="Resources\Windows\SP-Knife-.+.rb" />
+    <EmbeddedResource Include="Resources\Windows\SP-Spoon.json" />
   </ItemGroup>
 
   <ItemGroup>

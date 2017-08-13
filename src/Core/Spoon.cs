@@ -1,27 +1,16 @@
-﻿using AstralKeks.ChefManagement.Core.Resources;
+﻿using AstralKeks.ChefSpoon.Core.Resources;
 using AstralKeks.Workbench.Common.Context;
+using AstralKeks.Workbench.Common.FileSystem;
 using AstralKeks.Workbench.Common.Json;
-using AstralKeks.Workbench.Common.Resources;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Diagnostics;
-using System.IO;
 using System.Linq;
 
 namespace AstralKeks.ChefSpoon.Core
 {
     public class Spoon
     {
-        private static readonly ResourceManager _resourceManager = new ResourceManager(typeof(Spoon));
-
-        public static SpoonConfig Configuration()
-        {
-            var locations = new[] { Location.Workspace(), Location.Userspace(Directories.Spoon) };
-            var configResource = _resourceManager.CreateResource(locations, Directories.Config, Files.Spoon);
-            var config = configResource.Read<SpoonConfig>();
-            return config;
-        }
-
         public static object Execute(string command, string verb, string[] arguments, SpoonConfig config = null)
         {
             if (command == null)
@@ -29,12 +18,14 @@ namespace AstralKeks.ChefSpoon.Core
             command = command.Trim();
             verb = (verb ?? string.Empty).Trim();
             arguments = arguments ?? new string[0];
-            config = config ?? Configuration();
+            config = config ?? SpoonConfig.Primary;
+            if (string.IsNullOrWhiteSpace(config.KnifeConfig))
+                throw new InvalidOperationException("Target is missing");
 
             var knife = BootstrapKnife(command, verb, arguments, config);
             return ExecuteKnife(knife.Exe, knife.Args);
         }
-        
+
         private static (string Exe, string Args) BootstrapKnife(string command, string verb, string[] arguments, SpoonConfig config)
         {
             var passedArguments = arguments.ToList();
@@ -45,12 +36,9 @@ namespace AstralKeks.ChefSpoon.Core
             }
             arguments = passedArguments.Select(a => a?.ToLower()).ToArray();
 
-            var knifeExe = Path.IsPathRooted(config.KnifeExe) ? config.KnifeExe : Path.Combine(Location.Workspace(), config.KnifeExe);
-            var knifeConfig = Path.IsPathRooted(config.KnifeConfig) ? config.KnifeConfig : Path.Combine(Location.Workspace(), config.KnifeConfig);
+            var knifeExe = FsPath.Absolute(Location.Workspace(), config.KnifeExe);
+            var knifeConfig = FsPath.Absolute(Location.Workspace(), Directories.Config, config.KnifeConfig);
             var knifeArgs = $"{command.ToLower()} {verb.ToLower()} {string.Join(" ", arguments)} -c '{knifeConfig}' -F json";
-
-            var locations = new[] { Location.Workspace(), Location.Userspace(Directories.Spoon) };
-            _resourceManager.CreateResource(locations, Directories.Config, Files.Knife);
 
             return (knifeExe, knifeArgs);
         }

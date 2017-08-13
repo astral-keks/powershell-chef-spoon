@@ -1,5 +1,5 @@
 ﻿
-namespace AstralKeks.ChefManagement.Core.Resources
+namespace AstralKeks.ChefSpoon.Core.Resources
 {
     internal class Directories
     {
