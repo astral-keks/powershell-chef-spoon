@@ -18,7 +18,7 @@ validation_key            "#{secure_dir}/#{validation_node}.pem"
 log_level                 :info
 log_location              STDOUT
 ssl_verify_mode           :verify_none
-knife[:editor] = '"C:\Program Files (x86)\Microsoft VS Code\Code.exe" -n -w"'
+knife[:editor] = '"C:\Program Files (x86)\Microsoft VS Code\Code.exe" -n -w'
 cache_type                "BasicFile"
 cache_options( 
     :path               =>"#{workplace_dir}/Temp/chef/cache"

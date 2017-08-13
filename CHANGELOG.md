@@ -1,6 +1,11 @@
 ## 0.0.4
 ### Fixed
 - Invalid target configuration
+- Invalid knife output handling
+
+## 0.0.4
+### Fixed
+- Invalid target configuration
 
 ## 0.0.3
 ### Fixed

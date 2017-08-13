@@ -2,6 +2,7 @@
 using AstralKeks.Workbench.Common.Context;
 using AstralKeks.Workbench.Common.FileSystem;
 using AstralKeks.Workbench.Common.Json;
+using Newtonsoft.Json;
 using Newtonsoft.Json.Linq;
 using System;
 using System.Diagnostics;
@@ -54,13 +55,14 @@ namespace AstralKeks.ChefSpoon.Core
                 var content = process?.StandardOutput.ReadToEnd();
                 process?.WaitForExit();
 
-                if (!string.IsNullOrEmpty(content))
+                try
                 {
                     var obj = new StringJsonObject(content);
                     return obj.Read<JToken>().ToObject(obj);
                 }
-                else
+                catch (JsonReaderException)
                 {
+                    Console.WriteLine(content);
                     return null;
                 }
             }
