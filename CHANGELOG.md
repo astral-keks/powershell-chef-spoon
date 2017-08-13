@@ -1,3 +1,7 @@
+## 0.1.0
+### Added
+- $SpoonLastResult support
+
 ## 0.0.4
 ### Fixed
 - Invalid target configuration

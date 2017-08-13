@@ -25,6 +25,7 @@ namespace AstralKeks.ChefSpoon.Command
         protected override void ProcessRecord()
         {
             var result = Spoon.Execute(Command, Verb, Arguments);
+            SessionState.PSVariable.Set("SpoonLastResult", result);
             WriteObject(result);
         }
 
