@@ -1,6 +1,6 @@
 ﻿using System.Management.Automation;
-using AstralKeks.Workbench.PowerShell;
-using AstralKeks.Workbench.PowerShell.Attributes;
+using AstralKeks.PowerShell.Common;
+using AstralKeks.PowerShell.Common.Attributes;
 using AstralKeks.ChefSpoon.Core;
 using System.Linq;
 using System;

@@ -12,14 +12,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="AstralKeks.Workbench.Common" Version="0.2.1" />
     <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
     <PackageReference Include="System.ValueTuple" Version="4.4.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="AstralKeks.Workbench.Common">
-      <HintPath>..\..\package\AstralKeks.Workbench.Common\0.0.0\lib\net462\AstralKeks.Workbench.Common.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
 </Project>

@@ -1,5 +1,5 @@
-﻿using AstralKeks.Workbench.PowerShell;
-using AstralKeks.Workbench.PowerShell.Attributes;
+﻿using AstralKeks.PowerShell.Common;
+using AstralKeks.PowerShell.Common.Attributes;
 using System.Management.Automation;
 using AstralKeks.ChefSpoon.Core;
 

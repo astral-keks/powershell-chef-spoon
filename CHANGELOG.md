@@ -1,3 +1,7 @@
+## 0.1.1
+### Changed
+- AstralKeks.Workbench.PowerShell -> AstralKeks.PowerShell.Common (NuGet package)
+
 ## 0.1.0
 ### Added
 - $SpoonLastResult support
