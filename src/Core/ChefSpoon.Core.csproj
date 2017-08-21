@@ -4,6 +4,9 @@
     <TargetFramework>net462</TargetFramework>
     <AssemblyName>AstralKeks.ChefSpoon.Core</AssemblyName>
     <RootNamespace>AstralKeks.ChefSpoon.Core</RootNamespace>
+    <Version>$(VersionSuffix)</Version>
+    <AssemblyVersion>$(VersionSuffix)</AssemblyVersion>
+    <FileVersion>$(VersionSuffix)</FileVersion>
   </PropertyGroup>
 
   <ItemGroup>

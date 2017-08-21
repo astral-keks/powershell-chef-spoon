@@ -1,3 +1,7 @@
+## 0.1.2
+### Fixed
+- Proper binaries and nupkg versioning
+
 ## 0.1.1
 ### Changed
 - AstralKeks.Workbench.PowerShell -> AstralKeks.PowerShell.Common (NuGet package)
