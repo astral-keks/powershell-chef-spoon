@@ -99,7 +99,7 @@ namespace AstralKeks.ChefSpoon.Core
 
         private static Resource GetResource(ResourceManager resourceManager, string resourceName)
         {
-            var locations = new[] { Location.Workspace(), Location.Userspace(Directories.Spoon) };
+            var locations = new[] { Paths.WorkspaceDirectory, Paths.UserspaceDirectory };
             return resourceManager.CreateResource(locations, Directories.Config, resourceName);
         }
 

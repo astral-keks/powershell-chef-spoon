@@ -1,3 +1,7 @@
+## 0.1.3
+### Fixed
+- Proper paths management
+
 ## 0.1.2
 ### Fixed
 - Proper binaries and nupkg versioning
